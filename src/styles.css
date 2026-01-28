@@ -1,0 +1,424 @@
+/* App.css - 日式米色質感風格 */
+:root {
+  --bg-color-start: #f8f6f2; /* 淺米色 */
+  --bg-color-end: #f0eadd; /* 稍深米色 */
+  --card-bg: #ffffff; /* 純白卡片 */
+  --accent-color: #8c7b6c; /* 深木棕色，用於按鈕和標題 */
+  --text-main: #4a4a4a; /* 深灰字體 */
+  --text-muted: #a09a8e; /* 淺灰字體 */
+  --border-color: #e0ddd5; /* 淺米色邊框 */
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05); /* 輕柔陰影 */
+  --shadow-card: 0 8px 20px rgba(140, 123, 108, 0.1); /* 卡片陰影 */
+  --input-bg: #fdfdfd; /* 輸入框背景 */
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--bg-color-start),
+    var(--bg-color-end)
+  ); /* 漸層背景 */
+  color: var(--text-main);
+  font-family: "Noto Sans TC", "Helvetica Neue", "PingFang TC",
+    "Microsoft JhengHei", sans-serif; /* 考慮中文字體 */
+  margin: 0;
+  min-height: 100vh; /* 確保背景填滿視窗 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 內容從頂部開始 */
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1000px;
+  width: 95%; /* 響應式調整 */
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.6); /* 容器半透明，透出背景漸層 */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px); /* 輕微模糊效果 */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+  font-weight: 400; /* 更柔和的粗細 */
+  letter-spacing: 6px;
+  color: var(--accent-color);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* 輸入區塊樣式 */
+.input-section {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: 12px; /* 圓角 */
+  box-shadow: var(--shadow-light);
+  margin-bottom: 60px;
+  border: 1px solid var(--border-color);
+}
+
+.yarn-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 兩欄布局 */
+  gap: 15px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* 圓角 */
+  background-color: var(--input-bg);
+  outline: none;
+  font-size: 1rem;
+  color: var(--text-main);
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(140, 123, 108, 0.2);
+}
+
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.select-wrapper label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.file-input-wrapper {
+  padding: 20px;
+  border: 2px dashed var(--border-color); /* 虛線邊框 */
+  text-align: center;
+  border-radius: 8px;
+  background: #fdfaf8;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.file-input-wrapper:hover {
+  background-color: #f0ede5;
+  border-color: var(--accent-color);
+}
+.upload-label {
+  font-size: 1rem;
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.submit-btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.submit-btn:hover {
+  background-color: #7a6a5d;
+  transform: translateY(-2px);
+}
+
+/* 篩選與排序工具列 */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap; /* 響應式換行 */
+  gap: 25px;
+  background: var(--card-bg);
+  padding: 18px 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  margin-bottom: 40px;
+  border: 1px solid var(--border-color);
+}
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tool-item label {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+.tool-item select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* 毛線網格與卡片 */
+.yarn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 略寬一些 */
+  gap: 40px 30px; /* 上下間距大，左右適中 */
+  padding-top: 10px;
+}
+
+.yarn-card {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 12px; /* 圓角 */
+  box-shadow: var(--shadow-card); /* 漂亮的陰影 */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+.yarn-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(140, 123, 108, 0.15);
+}
+
+/* 編號標籤 */
+.yarn-number {
+  position: absolute;
+  top: -15px; /* 稍微往上移 */
+  left: 20px;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 4px 14px;
+  font-size: 0.7rem;
+  font-family: "Courier New", monospace;
+  z-index: 10;
+  border-radius: 4px; /* 圓角 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px; /* 稍大 */
+  cursor: pointer;
+  z-index: 11;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  transition: background-color 0.2s, transform 0.2s;
+}
+.delete-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+
+.image-wrapper {
+  /* 新增的圖片容器 */
+  position: relative;
+  width: 100%;
+  height: 200px; /* 固定高度 */
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 12px 12px 0 0; /* 圖片上方圓角 */
+  background-color: #f0ede5; /* Placeholder 背景色 */
+}
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* 移除圖片底部的空白 */
+}
+.image-wrapper .placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+.info-row {
+  margin-bottom: 12px;
+}
+.info-tag {
+  background: #f0ede5;
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.divider {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 15px 0;
+}
+.field {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.label {
+  color: var(--text-muted);
+}
+.value {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* 裁切視窗樣式 (美化) */
+.crop-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.crop-container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  height: 400px;
+  background: #333;
+  border-radius: 12px 12px 0 0; /* 裁切器視窗圓角 */
+  overflow: hidden;
+}
+.crop-controls {
+  background: var(--card-bg);
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 0 0 12px 12px; /* 控制區圓角 */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.crop-controls label {
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+.crop-controls input[type="range"] {
+  width: 100%;
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 5px;
+  -webkit-appearance: none; /* 移除預設樣式 */
+  margin: 0;
+}
+.crop-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  cursor: grab;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.confirm-btn,
+.cancel-btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.confirm-btn {
+  background: var(--accent-color);
+  color: white;
+}
+.confirm-btn:hover {
+  background-color: #7a6a5d;
+  transform: translateY(-1px);
+}
+.cancel-btn {
+  background: #e0ddd5;
+  color: var(--text-main);
+}
+.cancel-btn:hover {
+  background-color: #d0cbc3;
+  transform: translateY(-1px);
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+  .form-main {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .yarn-grid {
+    grid-template-columns: 1fr;
+  } /* 手機單欄顯示 */
+  .yarn-number {
+    font-size: 0.65rem;
+    top: -12px;
+    left: 15px;
+  }
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
