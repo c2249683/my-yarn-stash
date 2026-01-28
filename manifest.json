@@ -1,0 +1,15 @@
+{
+  "short_name": "毛線",
+  "name": "安安的毛線",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#7c6d60",
+  "background_color": "#f8f6f2",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
