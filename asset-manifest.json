@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/my-yarn-stash/static/js/main.5969184d.js",
+    "index.html": "/my-yarn-stash/index.html",
+    "main.5969184d.js.map": "/my-yarn-stash/static/js/main.5969184d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5969184d.js"
+  ]
+}
